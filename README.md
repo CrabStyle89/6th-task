@@ -6,17 +6,17 @@ class GEneratingImage
 
     {
 
-        int size = int.Parse(args[0]);
+        int size = int.Parse(args[0]);                  // command line arguments
         int nCols = int.Parse(args[1]);
         int nRows = int.Parse(args[2]);
          
-        bool isBlack = false;
-        Bitmap bmp = new Bitmap(size*nCols,size*nRows);
+        bool isBlack = false;                           // my trigger to turn the color
+        Bitmap bmp = new Bitmap(size*nCols,size*nRows); //creating canvas. size depends from command line
         for (int i = 0; i < bmp.Width; i+=size)
         {
             for (int j = 0; j < bmp.Height; j += size)
             {
-                if (isBlack)
+                if (isBlack)            
                 {
                     DrawBlueSquare(bmp, i, j, size);
                     isBlack = false;
@@ -28,7 +28,7 @@ class GEneratingImage
 
 
         }
-        void DrawBlueSquare(Bitmap bitmap, int i, int j, int s)
+        void DrawBlueSquare(Bitmap bitmap, int i, int j, int s)// function for drawing 
         {
             for (int k = i; k < i + size && k < bitmap.Width; k++)
             {
